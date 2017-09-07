@@ -9,7 +9,7 @@ public class CareerFilterData {
     public static Object[][] careerFilterData(){
 
         return new Object[][]{
-                {"Test", JobCategories.QA, Locations.SAINT_PETERSBURG}
+                {"Test", "Saint-Petersburg"}
         };
     }
 }

@@ -1,7 +1,5 @@
 package data;
 
-import enums.JobCategories;
-import enums.Locations;
 import org.testng.annotations.DataProvider;
 
 public class CareerFilterData {
@@ -9,7 +7,7 @@ public class CareerFilterData {
     public static Object[][] careerFilterData(){
 
         return new Object[][]{
-                {"Test", "Saint-Petersburg"}
+                {"Test",  "Roman", "Iovlev", "roman_iovlev@epam.com", "Russian Federation", "Saint-Petersburg", "I WANT TO WORK IN EPAM!!!"}
         };
     }
 }

@@ -1,6 +1,5 @@
 package pages;
 
-import enums.Locations;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,16 +20,11 @@ public class CareerPage extends BasePage {
     @FindBy (css = "#location-select")
     public WebElement locationSelect;
 
-    @FindBy (css = ".multi-select-filter")
-    public WebElement departmentSelectButton;
-
-  /*  @FindBy (linkText = "Software Test Engineering")
-    public WebElement softwareTestEngDepartment; */
-
     @FindBy (css = "div.career-apply-box.career-apply-box-desktop > button")
     public WebElement searchButton;
 
     public void selectLocation (String location){
+        jobLocationDropDownButton.click();
         Select select = new Select(locationSelect);
         select.selectByVisibleText(location);
     }

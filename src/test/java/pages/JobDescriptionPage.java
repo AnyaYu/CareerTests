@@ -1,8 +1,11 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class JobDescriptionPage extends BasePage {
     public JobDescriptionPage(WebDriver driver) {
@@ -34,31 +37,40 @@ public class JobDescriptionPage extends BasePage {
     @FindBy(name = "captcha")
     public WebElement captcha;
 
-    @FindBy(css = ".country-selection ")
-    WebElement countrySelect;
-
     @FindBy(css = ".options")
     WebElement countryUl;
+
+    @FindBy(css = ".select-box-results")
+    WebElement cityUl;
 
 
 
     public void selectCountry (String country){
         countrySelectButton.click();
 
-      /*List<WebElement> listCountry = countryUl.findElements(By.cssSelector("li"));
+      List<WebElement> listCountry = countryUl.findElements(By.cssSelector("li"));
       for (WebElement element: listCountry){
-          if (element.getText().contains("country"));
-          element.click();
-          break;
+          if (element.getText().contains(country)) {
+              element.click();
+              break;
+          }
       }
-      */
+
     }
 
     public void selectCity (String city){
+
         cityField.click();
+        List<WebElement> listCity = cityUl.findElements(By.cssSelector("li"));
+        for (WebElement element: listCity){
+            if (element.getText().contains(city)) {
+                element.click();
+                break;
+            }
+        }
     }
 
-    public void CVFormSubmit(String firstName, String lastName, String email, String country, String city, String message){
+    public void CVFormSubmit(String firstName, String lastName, String email, String country, String city, String message) throws InterruptedException {
        setElementText(firstNameField, firstName);
        setElementText(lastNameField, lastName);
        setElementText(emailField, email);

@@ -7,7 +7,9 @@ public class CareerFilterData {
     public static Object[][] careerFilterData(){
 
         return new Object[][]{
-                {"Test",  "Roman", "Iovlev", "roman_iovlev@epam.com", "Russian Federation", "Saint-Petersburg", "I WANT TO WORK IN EPAM!!!"}
+                {"Test",  "Roman", "Iovlev", "roman_iovlev@epam.com",
+                        "Russian Federation", "Saint-Petersburg", "I WANT TO WORK IN EPAM!!!",
+                        "Test Automation Engineer (back-end)"}
         };
     }
 }
